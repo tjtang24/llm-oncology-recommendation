@@ -1,0 +1,5 @@
+numpy==1.26.4
+pandas==2.2.3
+torch==2.12.1 ; sys_platform == "darwin"
+torch==2.12.1 ; sys_platform == "win32"
+torch @ https://download-r2.pytorch.org/whl/cpu/torch-2.12.1%2Bcpu-cp312-cp312-manylinux_2_28_x86_64.whl#sha256=ae4bb28409f5370852bd71af221066236c38d647f780d9b0a7240c330a9c12df ; sys_platform == "linux" and platform_machine == "x86_64"

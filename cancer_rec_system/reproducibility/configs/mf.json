@@ -1,0 +1,37 @@
+{
+  "model": "Surprise biased SVD matrix factorization",
+  "training_mode": "fixed saved-hyperparameter full-data refit",
+  "seed": 2000,
+  "hyperparameters": {
+    "biased": true,
+    "n_epochs": 100,
+    "lr_all": 0.01,
+    "reg_all": 0.1,
+    "n_factors": 50,
+    "init_mean": 0,
+    "init_std_dev": 0.1
+  },
+  "historical_source": {
+    "sha256": "5d38594cdeeec5e827713b5b52354cc37296c70b8477c99c5c545ae1500e2252",
+    "search_folds": 10,
+    "note": "The search is provenance only. A fresh full-grid replay selected 100 factors and is not the exact-recommendation path."
+  },
+  "reference_outputs": {
+    "model_file_sha256": "e6cc1369dd496a9e6ed0a48afa5d8aab2f0eb28f405c3a41ac6756e739519eb1",
+    "bu_sha256": "039d5888fdb5625bb1535096fcb605a15a7636f24b0cf1b772b54a14a81f8b40",
+    "bi_sha256": "4610625527ecb6b9e340e2b994754a3adc4d766cf67bae9bdc78b26aed0dcd09",
+    "pu_sha256": "409410239dc2b13d570d2f84a002cce57e1a721d633621a9863ce798302049ce",
+    "qi_sha256": "8dda6790835048021d303524165973711e32f51d05f0c9824923f816b5d1dfdc",
+    "catalog_raw_sha256": "58b2d74c9948b768f5a9aa5d0f7649676c35e3d914f007725c637e51a3e8993f",
+    "training_top20_csv_sha256": "896ae208bb01e5a33290f861c7731bd1be5b07764bad4b12aea0c66bd87a967f",
+    "item_mapping_json_sha256": "2e92a5903400e00aa8758217abfec44bc1095c9d72ca69efb1df6893a746037d",
+    "user_mapping_json_sha256": "4de6e4702d1119f207dca8fcd8883215e329f7928f09f14158dc39320243e155"
+  },
+  "audit_result": {
+    "independent_refits": 2,
+    "model_arrays_bitwise_exact": true,
+    "catalog_scores_exact": "721600/721600",
+    "ordered_top20_exact": "55/55",
+    "canonical_display_mapping_exact": "12049/12049"
+  }
+}

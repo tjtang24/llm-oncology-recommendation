@@ -1,0 +1,41 @@
+{
+  "date": "2026-07-31",
+  "status": "PASS_SAME_RECORDED_ENVIRONMENT",
+  "scope": "Two independent launches of each published fixed-refit runner were compared with the frozen reference and with each other.",
+  "environment_matches_environment_json": true,
+  "private_inputs": {
+    "training_snapshot_sha256": "42e347cf0adaab059ab9b80b67fe14ed919a054eb4686b8479ee9c0aa87ccecc"
+  },
+  "mf": {
+    "independent_complete_runs": 2,
+    "reference_hashes_exact_both_runs": true,
+    "run_to_run_hashes_exact": true,
+    "checks": [
+      "serialized model",
+      "bu",
+      "bi",
+      "pu",
+      "qi",
+      "721600 catalog scores",
+      "55 x 20 ordered canonical-display recommendations",
+      "55-user mapping",
+      "12049-item canonical display mapping"
+    ]
+  },
+  "ncf": {
+    "independent_complete_runs": 2,
+    "reference_hashes_exact_both_runs": true,
+    "run_to_run_hashes_exact": true,
+    "reference_epoch_trace_exact_both_runs": true,
+    "checks": [
+      "serialized checkpoint",
+      "14 canonical tensors",
+      "721600 catalog scores",
+      "55 x 20 training-snapshot recommendations",
+      "55-user and 13120-item mappings",
+      "complete epoch-history CSV"
+    ]
+  },
+  "third_party_clean_machine_tested": false,
+  "interpretation": "The committed runners are exact in the recorded historical environment. Cross-machine exact reproducibility remains unestablished until an independent party provisions a clean environment and passes the same manifest checks."
+}

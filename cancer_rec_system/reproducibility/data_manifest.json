@@ -1,0 +1,45 @@
+{
+  "version": 1,
+  "description": "Private input contracts for the fixed MF and paper ID-only NCF refits. No source rows are distributed.",
+  "inputs": {
+    "training_snapshot": {
+      "filename_hint": "summary_w_score.csv",
+      "bytes": 63624876,
+      "data_rows": 24179,
+      "sha256": "42e347cf0adaab059ab9b80b67fe14ed919a054eb4686b8479ee9c0aa87ccecc",
+      "required_columns": [
+        "Cancer",
+        "Intervention",
+        "Score"
+      ],
+      "used_by": [
+        "MF fitting and recommendation generation",
+        "NCF fitting and training-snapshot recommendation generation"
+      ]
+    },
+    "targeted_therapy": {
+      "filename_hint": "targeted_therapy.csv",
+      "bytes": 3500,
+      "data_rows": 192,
+      "sha256": "70d1de9aa884288b4cf091c6d9763c5f600e5aa22ac50990a895146dd03fc93a",
+      "required_columns": [
+        "drug",
+        "mutation"
+      ],
+      "used_by": [
+        "Hybrid-NCF mutation side-feature construction (training/features.py)"
+      ]
+    }
+  },
+  "processed_training_contract": {
+    "rows": 32960,
+    "cancers": 55,
+    "order_sensitive_intervention_ids": 13120,
+    "canonical_display_interventions": 12049,
+    "unique_cancer_intervention_pairs": 23044,
+    "score_min": -1.15,
+    "score_max": 4.0,
+    "minimum_rows_per_cancer": 20
+  },
+  "order_sensitivity": "Cancer and intervention IDs follow first appearance after the historical preprocessing. Changing row order changes the model contract."
+}

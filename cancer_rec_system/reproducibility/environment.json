@@ -1,0 +1,34 @@
+{
+  "status": "Historical audit environment; exact third-party provisioning has not yet been demonstrated.",
+  "python": "3.9.18",
+  "python_build": "Clang 14.0.6",
+  "platform": "macOS-26.5.2-arm64-arm-64bit",
+  "machine": "arm64",
+  "hardware": {
+    "processor": "Apple M2 Max",
+    "logical_cores": 12
+  },
+  "packages": {
+    "numpy": "1.26.4",
+    "pandas": "1.5.3",
+    "scikit-learn": "1.3.2",
+    "scikit-surprise": "1.1.4",
+    "scipy": "1.13.1",
+    "joblib": "1.2.0",
+    "threadpoolctl": "3.2.0",
+    "torch": "2.3.0.dev20240208"
+  },
+  "torch_execution": {
+    "device": "cpu",
+    "cuda_available": false,
+    "mps_available_but_unused": true,
+    "deterministic_algorithms": false,
+    "intraop_threads": 12,
+    "interop_threads": 12
+  },
+  "pytorch_conda_artifact": {
+    "channel": "pytorch-nightly/osx-arm64",
+    "filename": "pytorch-2.3.0.dev20240208-py3.9_0.tar.bz2",
+    "sha256": "63e39140dd3d3bca50a0d7797409554102b4c492a64614d847330919de3b70f8"
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "version": 1,
+  "description": "Local research snapshots used to verify the current inference-bundle contract; source rows are not distributed in this repository.",
+  "inputs": {
+    "summary_w_score.csv": {
+      "bytes": 63624876,
+      "data_rows": 24179,
+      "sha256": "42e347cf0adaab059ab9b80b67fe14ed919a054eb4686b8479ee9c0aa87ccecc",
+      "required_columns": [
+        "Cancer",
+        "Intervention",
+        "Score",
+        "Phases",
+        "Year"
+      ]
+    },
+    "targeted_therapy.csv": {
+      "bytes": 3500,
+      "data_rows": 192,
+      "sha256": "70d1de9aa884288b4cf091c6d9763c5f600e5aa22ac50990a895146dd03fc93a",
+      "required_columns": [
+        "drug",
+        "mutation"
+      ]
+    }
+  },
+  "feature_contract": {
+    "dimensions": 31,
+    "names": [
+      "ABL-TKI",
+      "AKT1",
+      "ALK",
+      "BCL-2",
+      "BCR-ABL1",
+      "BRAF",
+      "BTK",
+      "CDK4",
+      "CDK6",
+      "CTLA-4",
+      "EGFR",
+      "FGFR",
+      "FGFR3",
+      "FLT3",
+      "GD2",
+      "HER2",
+      "Hh",
+      "JAK2",
+      "MEK",
+      "MET",
+      "MTOR",
+      "NTRK",
+      "PARP",
+      "PD-1",
+      "PD-L1",
+      "RANKL",
+      "RET",
+      "ROS1",
+      "TROP2",
+      "VEGF",
+      "VEGFR"
+    ]
+  },
+  "included_in_repository": false
+}

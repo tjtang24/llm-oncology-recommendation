@@ -1,0 +1,77 @@
+{
+  "model": "hybrid",
+  "protocol": "faithful",
+  "description": "Frozen historical CV configuration and reference metrics for the Hybrid-NCF baseline (ID embeddings plus cancer/drug mutation side-features built by the maintained feature module). The faithful protocol carries one global tuner across folds; the reported RMSE is a source-faithful historical statistic, not a clean nested-CV estimate.",
+  "seed": 2000,
+  "configuration": {
+    "device": "cpu",
+    "folds": 10,
+    "trials_per_fold": 50,
+    "pretrain_epochs": 30,
+    "pretrain_patience": 5,
+    "finetune_epochs": 20,
+    "finetune_patience": 3,
+    "features": 31,
+    "split": "row_kfold",
+    "tuner_scope": "global_across_folds",
+    "full_historical_configuration": true
+  },
+  "reference_aggregate": {
+    "arithmetic_mean_rmse": 0.46429190935496384,
+    "pooled_rmse": 0.468880809144723,
+    "minimum_rmse": 0.427124199181924,
+    "arithmetic_mean_mse": 0.2198492131842101,
+    "minimum_mse": 0.1824350815267999,
+    "arithmetic_mean_mae": 0.27094854395863716,
+    "minimum_mae": 0.24502432054994602
+  },
+  "reported_manuscript_rmse": "0.4643",
+  "paper_rmse_original_claim": 0.433,
+  "reference_selected_hyperparameters": {
+    "batch_size": 2048,
+    "dropout_rate": 0.4525622622994824,
+    "embedding_dim": 32,
+    "gmf_dim": 16,
+    "hidden_units": [128, 128, 128],
+    "learning_rate": 0.009643619336346634,
+    "num_hidden_layers": 3,
+    "weight_decay": 0.00021494056640012247
+  },
+  "reference_selected_model_source_fold": 1,
+  "reference_selected_model_source_trial": 6,
+  "reference_first_trial": {
+    "fold": 1,
+    "trial": 1,
+    "hyperparameters": {
+      "batch_size": 512,
+      "dropout_rate": 0.4657047226680572,
+      "embedding_dim": 128,
+      "gmf_dim": 64,
+      "hidden_units": [256],
+      "learning_rate": 0.00011183041944391307,
+      "num_hidden_layers": 1,
+      "weight_decay": 3.187665273494912e-05
+    },
+    "gmf_best_legacy_mse": 0.8213780224323273,
+    "mlp_best_legacy_mse": 0.7734183924538749,
+    "hybrid_best_legacy_mse": 0.8277702757290432,
+    "gmf_first_epoch_val_mse": 2.552999266556331,
+    "mlp_first_epoch_val_mse": 1.3437261623995644,
+    "hybrid_first_epoch_val_mse": 1.1836644581386022
+  },
+  "reference_per_fold": [
+    {"fold": 1, "rmse": 0.6569848464284826, "mse": 0.43162908843665687, "mae": 0.4319166627792203, "validation_rows": 3296, "validation_indices_sha256": "49085604e8bed03a907c26c3fabc43d13a0d38669e97ff83931634e4dd083fca"},
+    {"fold": 2, "rmse": 0.43629047934820114, "mse": 0.1903493823698831, "mae": 0.25142671699285635, "validation_rows": 3296, "validation_indices_sha256": "104776dbca64e0abd84318abe4d055e9fa25585c5d08428392f89e91b286eda2"},
+    {"fold": 3, "rmse": 0.43618192139905315, "mse": 0.1902546685553698, "mae": 0.24868868061712066, "validation_rows": 3296, "validation_indices_sha256": "e09957cc7d93f2adae54f13a8ce9cfb557e52f107d452132a7593f9fb80ac6ac"},
+    {"fold": 4, "rmse": 0.44293802102163854, "mse": 0.19619409046656552, "mae": 0.25603917093135475, "validation_rows": 3296, "validation_indices_sha256": "3485f3866dc4ea2fc4cbd5630035f8713e40861c00a03a72c0d01acd554d2c0b"},
+    {"fold": 5, "rmse": 0.43519498398129064, "mse": 0.18939467408247582, "mae": 0.24783932261144845, "validation_rows": 3296, "validation_indices_sha256": "b362d75aea50c7bd62feadb0b13b1cea1675106a3f83c4200b6d80d111ef4abe"},
+    {"fold": 6, "rmse": 0.4385976558337637, "mse": 0.19236790370287263, "mae": 0.25124518042546534, "validation_rows": 3296, "validation_indices_sha256": "d745127831c6a7fb81f91e8e6a5219d91ca3709f5fcd091ca2a74d35447aa275"},
+    {"fold": 7, "rmse": 0.4672016656273616, "mse": 0.21827739636498097, "mae": 0.2655626157569512, "validation_rows": 3296, "validation_indices_sha256": "a612f922ae5f89c79a8c77619c0676f65a26bdf7fd9e627b4967365fe136c81c"},
+    {"fold": 8, "rmse": 0.4366739835924126, "mse": 0.19068416794646664, "mae": 0.24502432054994602, "validation_rows": 3296, "validation_indices_sha256": "2f5a2d4e4b2752972962db43367a688e5613de10ced13d011782da59f49ffc8f"},
+    {"fold": 9, "rmse": 0.427124199181924, "mse": 0.1824350815267999, "mae": 0.2489659790667846, "validation_rows": 3296, "validation_indices_sha256": "67984bb50c870b1d44b508014b1297752fc32ff718918e7e08808036afbff36e"},
+    {"fold": 10, "rmse": 0.4657313371355099, "mse": 0.21690567839003, "mae": 0.26277678985522407, "validation_rows": 3296, "validation_indices_sha256": "6a7515aaa11b906b7a33ce9ae58492fe3ce9e46331e83f8413087b171dfd1e7a"}
+  ],
+  "leakage_warning": "The faithful protocol reproduces the historical code exactly, including a single global tuner whose best model and score persist across all folds. In the audited run the global best was fold-1 trial-6 and never improved across the remaining 494 trials, so every fold's reported metric is that one model evaluated on each fold's validation split. This is a repeatable source-faithful historical statistic and MUST NOT be relabelled as a clean nested-CV estimate.",
+  "mutation_side_feature_note": "Hybrid features are built by the maintained cancer_rec_system/training/features.py module from targeted_therapy.csv. The builder reproduces all eight audited prepared-data, mapping, label, and feature fingerprints exactly. Interventions are canonicalized before the item mapping, giving 12049 items (versus the ID-only NCF's order-sensitive 13120) at feature dimension 31.",
+  "environment_note": "The reference values were produced on macOS arm64, Python 3.9.18, NumPy 1.26.4, pandas 1.5.3, scikit-learn 1.3.2, PyTorch 2.3.0.dev20240208, CPU with 12 intra-op and 12 inter-op threads. Bit-exact reproduction requires a compatible environment."
+}

@@ -1,0 +1,72 @@
+{
+  "model": "ncf",
+  "protocol": "faithful",
+  "description": "Frozen historical CV configuration and reference metrics for the ID-only pretrained NCF baseline. The faithful protocol carries one global tuner across folds; the reported RMSE is a source-faithful historical statistic, not a clean nested-CV estimate.",
+  "seed": 2000,
+  "configuration": {
+    "device": "cpu",
+    "folds": 10,
+    "trials_per_fold": 50,
+    "pretrain_epochs": 30,
+    "pretrain_patience": 5,
+    "finetune_epochs": 20,
+    "finetune_patience": 3,
+    "split": "row_kfold",
+    "tuner_scope": "global_across_folds",
+    "full_historical_configuration": true
+  },
+  "reference_aggregate": {
+    "arithmetic_mean_rmse": 0.4947283211640383,
+    "pooled_rmse": 0.4980209785775517,
+    "minimum_rmse": 0.45827647997510806,
+    "arithmetic_mean_mse": 0.24802489510334214,
+    "minimum_mse": 0.21001733209837564,
+    "arithmetic_mean_mae": 0.30576220662920794,
+    "minimum_mae": 0.2825366367163999
+  },
+  "reported_manuscript_rmse": "0.4947",
+  "paper_rmse_original_claim": 0.5518,
+  "reference_selected_hyperparameters": {
+    "batch_size": 512,
+    "dropout_rate": 0.4370930091917137,
+    "gmf_dim": 64,
+    "gmf_embedding_dim": 128,
+    "hidden_units": [128, 64],
+    "learning_rate": 0.008887223072722527,
+    "mlp_embedding_dim": 64,
+    "num_hidden_layers": 2
+  },
+  "reference_selected_model_source_fold": 1,
+  "reference_selected_model_source_trial": 24,
+  "reference_first_trial": {
+    "fold": 1,
+    "trial": 1,
+    "hyperparameters": {
+      "batch_size": 2048,
+      "dropout_rate": 0.33706400506457146,
+      "gmf_dim": 64,
+      "gmf_embedding_dim": 128,
+      "hidden_units": [256, 128, 64],
+      "learning_rate": 0.005091459183200032,
+      "mlp_embedding_dim": 32,
+      "num_hidden_layers": 3
+    },
+    "ncf_best_legacy_mse": 0.6473876088857651,
+    "gmf_best_legacy_mse": 0.6424276530742645,
+    "gmf_first_epoch_val_mse": 1.1167672276496887
+  },
+  "reference_per_fold": [
+    {"fold": 1, "rmse": 0.6625278359599898, "mse": 0.43894313342182706, "mae": 0.4327203920510198, "validation_rows": 3296, "validation_indices_sha256": "49085604e8bed03a907c26c3fabc43d13a0d38669e97ff83931634e4dd083fca"},
+    {"fold": 2, "rmse": 0.47224514882821633, "mse": 0.2230154805917842, "mae": 0.28863282051928585, "validation_rows": 3296, "validation_indices_sha256": "104776dbca64e0abd84318abe4d055e9fa25585c5d08428392f89e91b286eda2"},
+    {"fold": 3, "rmse": 0.45827647997510806, "mse": 0.21001733209837564, "mae": 0.2825366367163999, "validation_rows": 3296, "validation_indices_sha256": "e09957cc7d93f2adae54f13a8ce9cfb557e52f107d452132a7593f9fb80ac6ac"},
+    {"fold": 4, "rmse": 0.47749040239682466, "mse": 0.22799708438108154, "mae": 0.29473402308157187, "validation_rows": 3296, "validation_indices_sha256": "3485f3866dc4ea2fc4cbd5630035f8713e40861c00a03a72c0d01acd554d2c0b"},
+    {"fold": 5, "rmse": 0.47119138994725773, "mse": 0.2220213259604287, "mae": 0.28656938831897566, "validation_rows": 3296, "validation_indices_sha256": "b362d75aea50c7bd62feadb0b13b1cea1675106a3f83c4200b6d80d111ef4abe"},
+    {"fold": 6, "rmse": 0.4714594415277179, "mse": 0.22227400500562763, "mae": 0.2917119488381865, "validation_rows": 3296, "validation_indices_sha256": "d745127831c6a7fb81f91e8e6a5219d91ca3709f5fcd091ca2a74d35447aa275"},
+    {"fold": 7, "rmse": 0.4944805969164512, "mse": 0.2445110607268499, "mae": 0.29888757781624636, "validation_rows": 3296, "validation_indices_sha256": "a612f922ae5f89c79a8c77619c0676f65a26bdf7fd9e627b4967365fe136c81c"},
+    {"fold": 8, "rmse": 0.47542530054675086, "mse": 0.2260292163999684, "mae": 0.28666626672185974, "validation_rows": 3296, "validation_indices_sha256": "2f5a2d4e4b2752972962db43367a688e5613de10ced13d011782da59f49ffc8f"},
+    {"fold": 9, "rmse": 0.4645947699428971, "mse": 0.2158483002582935, "mae": 0.2919386211970423, "validation_rows": 3296, "validation_indices_sha256": "67984bb50c870b1d44b508014b1297752fc32ff718918e7e08808036afbff36e"},
+    {"fold": 10, "rmse": 0.4995918455991703, "mse": 0.24959201218918523, "mae": 0.3032243910314919, "validation_rows": 3296, "validation_indices_sha256": "6a7515aaa11b906b7a33ce9ae58492fe3ce9e46331e83f8413087b171dfd1e7a"}
+  ],
+  "leakage_warning": "The faithful protocol reproduces the historical code exactly, including a single global tuner whose best model and score persist across all folds. In the audited run the global best was fold-1 trial-24 and never improved across the remaining 476 trials, so every fold's reported metric is that one model evaluated on each fold's validation split. This is a repeatable source-faithful historical statistic and MUST NOT be relabelled as a clean nested-CV estimate.",
+  "environment_note": "The reference values were produced on macOS arm64, Python 3.9.18, NumPy 1.26.4, pandas 1.5.3, scikit-learn 1.3.2, PyTorch 2.3.0.dev20240208, CPU with 12 intra-op and 12 inter-op threads. Bit-exact reproduction requires a compatible environment."
+}

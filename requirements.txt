@@ -1,0 +1,9 @@
+# Default conference-code environment: Python 3.12.13.
+# Covers the maintained Hybrid-NCF training path, bundle export, and the
+# supplementary-appendix scripts (scoring-rule sensitivity and simulation).
+-r cancer_rec_system/requirements.txt
+
+# Do not add the historical MF/NCF audit dependencies here. Their exact-refit
+# record uses Python 3.9.18, pandas 1.5.3, and a historical PyTorch nightly.
+# See cancer_rec_system/requirements-reproducibility.txt and
+# cancer_rec_system/reproducibility/environment-macos-arm64.yml.

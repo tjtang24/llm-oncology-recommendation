@@ -1,0 +1,69 @@
+{
+  "model": "Stage-wise pretrained ID-only Neural Collaborative Filtering",
+  "training_mode": "fixed saved-hyperparameter full-data refit",
+  "seed": 2000,
+  "device": "cpu",
+  "hyperparameters": {
+    "gmf_embedding_dim": 128,
+    "mlp_embedding_dim": 64,
+    "gmf_dim": 64,
+    "num_hidden_layers": 2,
+    "hidden_units": [
+      128,
+      64
+    ],
+    "dropout_rate": 0.4370930091917137,
+    "learning_rate": 0.008887223072722527,
+    "batch_size": 512
+  },
+  "schedule": {
+    "validation_fraction": 0.2,
+    "validation_split": "row-level torch random_split",
+    "gmf_pretrain_max_epochs": 30,
+    "mlp_pretrain_max_epochs": 30,
+    "pretrain_patience": 5,
+    "pretrain_weight_decay": 0.01,
+    "finetune_lr_scale": 0.1,
+    "ncf_finetune_max_epochs": 20,
+    "finetune_patience": 3,
+    "finetune_weight_decay": 0.01,
+    "full_data_epochs": 10,
+    "full_data_weight_decay": 0.005,
+    "scheduler_factor": 0.7,
+    "pretrained_output_alpha": 0.5
+  },
+  "historical_source": {
+    "git_commit": "7bc0c9219debb0a2eebb4d03aae95ec3fc1d1f52",
+    "sha256": "09281fc6b5178a08db93190057cd22e42168204590c266da7ebec6fdfc1f7bf7",
+    "search_folds": 10,
+    "trials_per_fold": 50,
+    "note": "The historical tuner retained global state across folds. The exact-recommendation path therefore uses the saved configuration and does not rerun selection."
+  },
+  "reference_epoch_trace": {
+    "gmf_run": 30,
+    "gmf_best": 30,
+    "mlp_run": 7,
+    "mlp_best": 2,
+    "ncf_run": 20,
+    "ncf_best": 20,
+    "full_data": 10
+  },
+  "reference_outputs": {
+    "model_file_sha256": "d05dc4f38d9836ae91de3d45178030ddec593b355ccf19d45f14ea144ee58ac5",
+    "canonical_tensor_sha256": "57a31ec05b4c845ede98c34d39b01f50e68bec0c4a80d42a3c37dafb3480ee4f",
+    "catalog_raw_sha256": "3b8be382c15afce18a31194c787001d57ddc9c9d55bea27c52f8d08a3a86b4a9",
+    "training_top20_csv_sha256": "549851aea34951a53742c84da47c7c2951c48f28f8c5aa930c5fe775fa4686db",
+    "user_mapping_json_sha256": "4de6e4702d1119f207dca8fcd8883215e329f7928f09f14158dc39320243e155",
+    "item_mapping_json_sha256": "777aeb94cb80963cc54a37ef907a5cb4348768f52087cf20c8a05a3aea8284b9",
+    "epoch_history_csv_sha256": "d7f7db01326ea745d09974e4f46176ffd0d5ce8638c7a339dc684762727f47c3"
+  },
+  "audit_result": {
+    "independent_refits": 2,
+    "tensors_bitwise_exact": "14/14",
+    "catalog_scores_exact": "721600/721600",
+    "ordered_top20_exact": "55/55",
+    "mapping_files_exact": true,
+    "epoch_history_exact": true,
+    "third_party_clean_machine_tested": false
+  }
+}

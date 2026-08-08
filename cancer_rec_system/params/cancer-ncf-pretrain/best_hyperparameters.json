@@ -1,0 +1,14 @@
+{
+  "batch_size": 2048,
+  "dropout_rate": 0.4525622622994824,
+  "embedding_dim": 32,
+  "gmf_dim": 16,
+  "hidden_units": [
+    128,
+    128,
+    128
+  ],
+  "learning_rate": 0.009643619336346634,
+  "num_hidden_layers": 3,
+  "weight_decay": 0.00021494056640012247
+}

@@ -1,0 +1,66 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the conference paper in preferred-citation."
+title: "Oncology Evidence Recommendation System"
+type: software
+authors:
+  - family-names: Tang
+    given-names: Tengjie
+    affiliation: "Department of Statistics, Pennsylvania State University"
+    email: tft5323@psu.edu
+  - family-names: Li
+    given-names: Angkai
+    affiliation: "Department of Statistics, Pennsylvania State University"
+  - family-names: Bai
+    given-names: Xuanyu
+    affiliation: "Department of Economics, University of California, Berkeley"
+  - family-names: Tan
+    given-names: Xingye
+    affiliation: "Department of Statistics, Pennsylvania State University"
+  - family-names: Ji
+    given-names: Qingli
+    affiliation: "Department of Statistics, Pennsylvania State University"
+  - family-names: Ulis
+    given-names: Michael
+    affiliation: "Department of Statistics, Pennsylvania State University"
+  - family-names: Si
+    given-names: Lu
+    affiliation: "Department of Melanoma and Sarcoma, Peking University Cancer Hospital Institute"
+  - family-names: Bao
+    given-names: Le
+    affiliation: "Department of Statistics, Pennsylvania State University"
+repository-code: "https://github.com/tjtang24/llm-oncology-recommendation"
+abstract: >-
+  Research software accompanying the conference paper "Bridging Data Gaps
+  in Oncology: Integrating Large Language Models and Recommendation Systems for
+  Evidence Synthesis."
+preferred-citation:
+  type: conference-paper
+  title: >-
+    Bridging Data Gaps in Oncology: Integrating Large Language Models and
+    Recommendation Systems for Evidence Synthesis
+  authors:
+    - family-names: Tang
+      given-names: Tengjie
+    - family-names: Li
+      given-names: Angkai
+    - family-names: Bai
+      given-names: Xuanyu
+    - family-names: Tan
+      given-names: Xingye
+    - family-names: Ji
+      given-names: Qingli
+    - family-names: Ulis
+      given-names: Michael
+    - family-names: Si
+      given-names: Lu
+    - family-names: Bao
+      given-names: Le
+  conference:
+    name: "The First Conference on Statistics and Trustworthy AI for Cross (X)-Domain Acceleration"
+  year: 2026
+  url: "https://openreview.net/forum?id=or67MercQB"
+keywords:
+  - oncology
+  - clinical trials
+  - recommender systems
+  - neural collaborative filtering

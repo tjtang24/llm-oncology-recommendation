@@ -1,0 +1,10 @@
+# Reviewers: place the private research inputs here so the code reads them by
+# default (no --data / --targeted flags needed):
+#
+#   summary_w_score.csv
+#   targeted_therapy.csv
+#
+# These inputs are not distributed publicly. Nothing in this directory is
+# committed except this .gitignore.
+*
+!.gitignore
